@@ -18,6 +18,7 @@ Sesi 1
                 },
 
 3. Dalam nextjs kita bebas menentukan structure  folder, best practice nya component dipisah dari app folder. Folder app digunakan untuk routing sedangkan component untuk sumber component yang akan diimport. Dalam nextjs routing ditentukan oleh struktur folder. Di dalam folder yang dijadikan routing harus ada file bernama page.js
+           ```
             src
             ├── app
             │   ├── favicon.ico
@@ -34,6 +35,8 @@ Sesi 1
                 ├── Navbar
                 │   └── index.js
                 └── Utilities
+            ```
+            ```
 
 4. Gunakan ```"<Link><Link/>"``` alih-alih ```"<a><a/>"``` agar ketika mengunjungi link tersebut page tidak di reload secara keseluruhan 
             ```import Link from "next/link";```
