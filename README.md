@@ -4,11 +4,13 @@ Sesi 1
 ------
 
 1. web ini menampilkan list anime yang mana datanya diambil(fetch) dengan api 'jikan'(open source api untuk list anime) https://docs.api.jikan.moe/
+            ```
             const response = await fetch(
             `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=8`
             );
 
             const anime = await response.json();
+            ```
 
 2. Jika menggunakan image dari CDN atau source luar maka harus menambahkan domain nya ke next.config.mjs
             images: {
@@ -33,5 +35,5 @@ Sesi 1
                 │   └── index.js
                 └── Utilities
 
-4. Gunakan "<Link><Link/>" alih-alih "<a><a/>" agar ketika mengunjungi link tersebut page tidak di reload secara keseluruhan 
-            (import Link from "next/link");
+4. Gunakan ```"<Link><Link/>"``` alih-alih ```"<a><a/>"``` agar ketika mengunjungi link tersebut page tidak di reload secara keseluruhan 
+            ```import Link from "next/link";```
