@@ -33,4 +33,5 @@ Sesi 1
                 │   └── index.js
                 └── Utilities
 
-4. Gunakan <Link><Link/> alih-alih <a><a/> agar ketika mengunjungi link tersebut page tidak di reload secara keseluruhan 
+4. Gunakan "<Link><Link/>" alih-alih "<a><a/>" agar ketika mengunjungi link tersebut page tidak di reload secara keseluruhan 
+            (import Link from "next/link");
