@@ -1,4 +1,4 @@
-import AnimeList from "../components/AnimeList";
+import AnimeList from "@/components/AnimeList";
 import Header from "@/components/AnimeList/Header";
 /**
  * Fungsi HomePage
@@ -10,20 +10,19 @@ import Header from "@/components/AnimeList/Header";
  * @returns {JSX.Element} Halaman utama aplikasi dengan daftar anime
  */
 
-const Page = async () => {
+const Page = async ({params}) => {
+    const {keyword} = params;
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=8`
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${keyword}`
   );
 
-  const topAnime = await response.json();
+  const searchAnime = await response.json();
   return (
     <>
-      {/* anime populer */}
       <section>
-      <Header title="Paling populer" linkHref="/populer" linkTitle="lihat semua" />
-      <AnimeList api={topAnime} />
+      <Header title={`Pencarian untuk ${keyword} ...`} />
+      <AnimeList api={searchAnime} />
       </section>
-      
     </>
   );
 };
