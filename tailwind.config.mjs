@@ -10,6 +10,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        dongker: '#1A2238',
+        orange: '#FF6A3D',
       },
     },
   },

@@ -56,7 +56,7 @@
 	
 4. Menambahkan attribute onKeyDown pada input search untuk melakukan pencarian ketika key Enter ditekan.
 
-alur pencarian
+####  alur pencarian
 ---
 1. **Event Handling**: Saat user menekan tombol "Enter" di input pencarian, event `onKeyDown` dipicu dan memanggil fungsi `handleSearch` yang telah diatur sebagai handler untuk event tersebut.
 2. **DOM Manipulasi**: Fungsi `handleSearch` mengakses nilai dari input pencarian menggunakan `searchRef.current.value`, yang merupakan referensi ke elemen input yang telah diatur menggunakan hook `useRef`.
@@ -67,3 +67,15 @@ alur pencarian
 7. **Halaman Rendering**: Halaman pencarian di-render oleh Next.js menggunakan metode `getServerSideProps` atau `getStaticProps`, tergantung pada konfigurasi yang telah diatur.
 8. **Data Fetching**: Halaman pencarian melakukan fetching data dari API atau sumber data lainnya menggunakan parameter kata kunci yang telah diatur.
 9. **Hasil Pencarian Rendering**: Hasil pencarian di-render di halaman pencarian menggunakan data yang telah di-fetch.
+
+Sesi 3
+------
+1. Menambahkan color pallete ke theme tailwind
+	`tailwind.config.mjs` =>     theme - extend - colors    
+2. Membuat halaman loading
+	di nextjs membuat halaman loading cukup dengan membuat file loading.js di folder app
+3. Membuat halaman not found
+	di nextjs membuat halaman loading cukup dengan membuat file not-found.js di folder app
+4. Mencegah melakukan pencarian ketika field input kosong
+	`if (!keyword) return;`
+	
