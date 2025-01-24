@@ -57,7 +57,7 @@
 4. Menambahkan attribute onKeyDown pada input search untuk melakukan pencarian ketika key Enter ditekan.
 
 ####  alur pencarian
----
+
 1. **Event Handling**: Saat user menekan tombol "Enter" di input pencarian, event `onKeyDown` dipicu dan memanggil fungsi `handleSearch` yang telah diatur sebagai handler untuk event tersebut.
 2. **DOM Manipulasi**: Fungsi `handleSearch` mengakses nilai dari input pencarian menggunakan `searchRef.current.value`, yang merupakan referensi ke elemen input yang telah diatur menggunakan hook `useRef`.
 3. **Parameter Ekstraksi**: Fungsi `handleSearch` mengekstrak nilai dari input pencarian dan mengatur parameter kata kunci yang akan digunakan dalam URL.
@@ -79,3 +79,15 @@ Sesi 3
 4. Mencegah melakukan pencarian ketika field input kosong
 	`if (!keyword) return;`
 	
+
+
+Sesi 4
+------
+1. Membuat pagination
+    - menggunakan `'use client'` agar bisa menggunakan client components(useState, useEffect, onClick dll)
+	- menambahkan attribute disabled pada button agar page tidak kurang dari 1 dan tidak lebih dari halaman paling akhir
+	
+2. Decode keyword
+	- `const decodedKeyword = decodeURI(keyword);` merubah "bahasa" yang dipahami url menjadi human readable contohnya kayak %20 menjadi space
+	
+3. Gunakan .jsx jika berupa komponennya yang dirender di browser selain itu pake .js
