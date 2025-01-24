@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ['cdn.myanimelist.net'],
-      },
+  basePath: '/projects/anime', // Menentukan basePath untuk semua routing dan asset
+  images: {
+    domains: ['cdn.myanimelist.net'], // Mendukung domain untuk memuat gambar eksternal
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig; // Export konfigurasi dengan benar
