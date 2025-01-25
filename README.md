@@ -91,3 +91,17 @@ Sesi 4
 	- `const decodedKeyword = decodeURI(keyword);` merubah "bahasa" yang dipahami url menjadi human readable contohnya kayak %20 menjadi space
 	
 3. Gunakan .jsx jika berupa komponennya yang dirender di browser selain itu pake .js
+
+Sesi 5
+------
+1. Meningkatkan reusabilitas API call
+	memindahkan pemanggilan API ke folder lib, sehingga mempermudah pemanggilan
+2. Menambahkan halaman detail anime
+	- Peringkat
+	- Score
+	- Episode
+	- Studio
+	- Genre
+3. Menampilkan trailer youtube menggunakan library `react/youtube`
+	- menampilkan trailer youtube bagi api yang memiliki url trailer youtube
+	- menampilkan text `trailer tidak tersedia untuk anime ini` bagi api yang tidak memiliki url trailer youtube
