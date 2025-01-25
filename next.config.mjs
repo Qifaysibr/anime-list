@@ -7,4 +7,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig; // Export konfigurasi dengan benar
+export default nextConfig; // Export konfigurasi dengan benar
