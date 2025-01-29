@@ -9,7 +9,7 @@ const InputSearch = () => {
     // Mengambil nilai dari input pencarian yang saat ini difokuskan oleh searchRef.
     const keyword = searchRef.current.value;
     //mencegah pencarian ketika input kosong
-    if (!keyword) return;
+    if (!keyword || keyword.trim() === "") return;
     //Mengarahkan ke halaman pencarian dengan menggunakan router. Parameter keyword akan digunakan sebagai path parameter dalam URL.
     router.push(`/search/${keyword}`);
   };

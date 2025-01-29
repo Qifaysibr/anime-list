@@ -105,3 +105,22 @@ Sesi 5
 3. Menampilkan trailer youtube menggunakan library `react/youtube`
 	- menampilkan trailer youtube bagi api yang memiliki url trailer youtube
 	- menampilkan text `trailer tidak tersedia untuk anime ini` bagi api yang tidak memiliki url trailer youtube
+
+
+#### Sesi 6 & 7
+------
+1. Membuat fitur rekomendasi anime
+	1. Pertama, fungsi `getNestedAnimeResponse` digunakan untuk mengambil data anime rekomendasi dari API. Fungsi ini menerima dua parameter: endpoint yang berisi endpoint API(`resource `) untuk mengambil data anime rekomendasi, dan key(`objectProperty`) yang menentukan kunci untuk mengakses data anime rekomendasi dalam respons API.
+	1. Kemudian, hasil dari `getNestedAnimeResponse` disimpan dalam variabel recommendedAnime.
+	1. Selanjutnya, fungsi `reproduce` dipanggil untuk memproses data anime rekomendasi. Fungsi ini menerima dua parameter: `data` yang berisi data anime rekomendasi, dan `gap` yang menentukan jumlah anime yang akan direkomendasikan. Fungsi ini kemudian menghasilkan daftar anime yang direkomendasikan.
+	1. Setelah itu, hasil dari reproduce disimpan kembali dalam variabel recommendedAnime.
+	1. Terakhir, dalam render komponen, recommendedAnime digunakan sebagai data untuk menampilkan daftar anime rekomendasi menggunakan komponen AnimeList.
+
+
+
+
+
+
+`map`: Method map mengembalikan array baru dengan hasil operasi yang dilakukan pada setiap elemen. Jika operasi tersebut mengembalikan array, maka hasilnya akan menjadi array of array (array 2 dimensi). 
+
+`flatMap`: Method flatMap juga mengembalikan array baru dengan hasil operasi yang dilakukan pada setiap elemen. Namun, jika operasi tersebut mengembalikan array, maka hasilnya akan menjadi array yang "datar" (array 1 dimensi / tidak ada array of array).

@@ -1,7 +1,8 @@
-import { getAnimeResponse } from "@/app/libs/api-libs";
+import { getAnimeResponse } from "@/libs/api-libs";
 import Image from "next/image";
 import VideoPlayer from "@/components/Utilities/VideoPlayer"
-const Page = async ({ params: { id } }) => {
+const Page = async ({ params }) => {
+  const { id } = await params;
   const anime = await getAnimeResponse(`anime/${id}`);
 //   console.log(anime);
 const youtubeId= anime.data.trailer.youtube_id;
