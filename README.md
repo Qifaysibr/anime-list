@@ -124,3 +124,26 @@ Sesi 5
 `map`: Method map mengembalikan array baru dengan hasil operasi yang dilakukan pada setiap elemen. Jika operasi tersebut mengembalikan array, maka hasilnya akan menjadi array of array (array 2 dimensi). 
 
 `flatMap`: Method flatMap juga mengembalikan array baru dengan hasil operasi yang dilakukan pada setiap elemen. Namun, jika operasi tersebut mengembalikan array, maka hasilnya akan menjadi array yang "datar" (array 1 dimensi / tidak ada array of array).
+
+
+#### Sesi 8 - Autentikasi
+
+**Proses autentikasi :**
+
+1. **Konfigurasi Autentikasi**: Next-Auth diatur dengan Github Provider pada file `auth.js`.
+2. **Autentikasi dengan Github**: Pengguna diarahkan ke halaman autentikasi Github dan memasukkan kredensial.
+3. **Pengiriman Token**: Github mengirimkan token akses ke aplikasi.
+4. **Autentikasi dengan Next-Auth**: Fungsi `getServerSession` digunakan untuk autentikasi dengan Next-Auth pada file `src/libs/auth-libs.js`.
+5. **Penggunaan Sesi Pengguna**: Sesi pengguna disimpan pada server dan digunakan untuk mengakses data pengguna.
+
+Teknologi yang digunakan:
+
+* Next-Auth
+* Github Provider
+* getServerSession
+
+File yang terkait:
+
+* `auth.js`
+* `src/libs/auth-libs.js`
+* `src/app/users/dashboard/page.jsx`

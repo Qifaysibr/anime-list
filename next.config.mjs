@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['cdn.myanimelist.net'], // Mendukung domain untuk memuat gambar eksternal
+    domains: ['cdn.myanimelist.net','avatars.githubusercontent.com'], // Mendukung domain untuk memuat gambar eksternal
   },
   async headers() {
     return [
