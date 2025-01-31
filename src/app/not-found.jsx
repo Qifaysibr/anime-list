@@ -1,5 +1,19 @@
 import Link from 'next/link';
 
+/*************  ✨ Codeium Command ⭐  *************/
+/**
+ * Komponen Page untuk menampilkan halaman 404 yang responsif dan interaktif.
+ * 
+ * Halaman ini menampilkan pesan kesalahan "Page Not Found" dengan nomor 404 yang besar dan mencolok,
+ * serta tombol yang memungkinkan pengguna untuk kembali ke halaman utama.
+ * 
+ * Elemen-elemen dalam halaman ini diatur menggunakan Flexbox untuk memastikan pusat konten,
+ * dan menggunakan kombinasi kelas Tailwind CSS untuk styling yang responsif dan menarik.
+ * 
+ * @returns {JSX.Element} Elemen JSX yang mewakili halaman 404.
+ */
+
+/******  a763e558-3d8e-4431-b8b9-4c7a0ec14620  *******/
 const Page = () => {
   return (
     <main className="h-screen w-full flex flex-col justify-center items-center bg-dongker">

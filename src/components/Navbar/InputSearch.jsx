@@ -1,6 +1,21 @@
 "use client";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
+  /**
+   * Komponen InputSearch berfungsi untuk mencari anime berdasarkan keyword
+   * yang diinputkan oleh pengguna. Komponen ini akan mengarahkan ke halaman
+   * pencarian dengan menggunakan router. Parameter keyword akan digunakan sebagai
+   * path parameter dalam URL.
+   *
+   * Komponen ini juga memiliki fitur untuk mencegah pencarian ketika input
+   * kosong. Jika input kosong maka komponen ini tidak akan mengarahkan ke
+   * halaman pencarian.
+   *
+   * Komponen ini juga memiliki fitur untuk mengarahkan ke halaman pencarian
+   * dengan menggunakan Enter key. Jika pengguna menekan Enter key maka
+   * komponen ini akan mengarahkan ke halaman pencarian dengan menggunakan
+   * router.
+   */
 const InputSearch = () => {
   const searchRef = useRef();
   const router = useRouter();
@@ -9,7 +24,10 @@ const InputSearch = () => {
     // Mengambil nilai dari input pencarian yang saat ini difokuskan oleh searchRef.
     const keyword = searchRef.current.value;
     //mencegah pencarian ketika input kosong
-    if (!keyword || keyword.trim() === "") return;
+    if (keyword.trim() === "") {
+      router.push("/");
+    }
+    if (!keyword ) return;
     //Mengarahkan ke halaman pencarian dengan menggunakan router. Parameter keyword akan digunakan sebagai path parameter dalam URL.
     router.push(`/search/${keyword}`);
   };
@@ -35,6 +53,9 @@ const InputSearch = () => {
           if (event.key === "Enter") {
             handleSearch();
           }
+        }}
+        onChange={(event) => {
+          handleSearch();
         }}
       />
       <input

@@ -1,10 +1,5 @@
 const Loading = () => {
   return (
-    // <main className="h-screen w-full flex flex-col justify-center items-center bg-dongker">
-    //     <h1 className="text-9xl font-extrabold text-white tracking-widest">
-    //         Loading...
-    //     </h1>
-    // </main>
     <>
       {/* component */}
       <div

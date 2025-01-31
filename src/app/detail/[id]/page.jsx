@@ -1,6 +1,20 @@
 import { getAnimeResponse } from "@/libs/api-libs";
 import Image from "next/image";
 import VideoPlayer from "@/components/Utilities/VideoPlayer"
+/**
+ * Halaman detail anime.
+ *
+ * Komponen ini menampilkan detail anime berupa judul, tahun, peringkat,
+ * score, episode, studio, genre, gambar, dan sinopsis.
+ *
+ * Jika anime memiliki trailer di YouTube, maka komponen ini akan
+ * menampilkan tombol "Tonton Trailer" yang akan membuka video trailer di
+ * YouTube. Jika tidak memiliki trailer, maka komponen ini akan menampilkan
+ * teks "Trailer tidak tersedia untuk anime ini".
+ *
+ * @param {{ id: number }} params - Properti yang berisi id anime.
+ * @returns {JSX.Element} Komponen yang menampilkan detail anime.
+ */
 const Page = async ({ params }) => {
   const { id } = await params;
   const anime = await getAnimeResponse(`anime/${id}`);

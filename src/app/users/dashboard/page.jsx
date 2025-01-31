@@ -1,5 +1,12 @@
 import Image from "next/image"
 import { authUserSession } from "@/libs/auth-libs";
+/**
+ * Komponen halaman Dashboard yang menampilkan data pengguna yang sedang login.
+ * Komponen ini mengautentikasi sesi pengguna menggunakan fungsi authUserSession
+ * dan menampilkan data pengguna yang sedang login.
+ *
+ * @returns {JSX.Element} Komponen halaman Dashboard yang menampilkan data pengguna.
+ */
 const Page = async() => {
     const user = await authUserSession();
     console.log(user);

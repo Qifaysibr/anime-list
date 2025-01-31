@@ -1,4 +1,11 @@
 import Link from "next/link";
+/**
+ * Komponen Header berfungsi sebagai judul dan link navigasi yang umum digunakan di
+ * dalam aplikasi. Komponen ini menerima tiga buah props: `title`, `linkHref`, dan
+ * `linkTitle`. `title` digunakan sebagai teks judul. `linkHref` dan `linkTitle`
+ * digunakan untuk membuat link navigasi. Jika `linkHref` dan `linkTitle` tidak
+ * diisi, maka link tidak akan di render.
+ */
 const Header = ({ title, linkHref, linkTitle }) => {
   return (
     <div className="flex justify-between p-4 items-center">
