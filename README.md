@@ -147,3 +147,15 @@ File yang terkait:
 * `auth.js`
 * `src/libs/auth-libs.js`
 * `src/app/users/dashboard/page.jsx`
+
+
+
+#### Sesi 9
+1. Membuat component My collection dan mengguanakan fungsi router.back() untuk kembali ke halaman sebelumnya. 
+
+> Fungsi router.back() adalah sebuah metode yang digunakan dalam perpustakaan routing Next.js (atau mungkin React Router) untuk mengarahkan pengguna ke halaman sebelumnya dalam riwayat navigasi.
+Secara teknis, ketika router.back() dipanggil, perpustakaan routing akan melakukan hal-hal berikut:
+1. Membaca riwayat navigasi yang disimpan dalam browser (biasanya dalam bentuk array atau stack).
+2. Mengambil URL halaman sebelumnya dari riwayat navigasi.
+3. Mengarahkan pengguna ke URL tersebut menggunakan metode `pushState` atau `replaceState` dari API History browser.
+4. Dengan demikian, pengguna akan kembali ke halaman sebelumnya tanpa memuat ulang seluruh aplikasi. Fungsi ini sangat berguna untuk membuat tombol "Kembali" yang fungsional dalam aplikasi web.
