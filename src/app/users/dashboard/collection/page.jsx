@@ -2,72 +2,36 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Dashboard/Header";
 import { authUserSession } from "@/libs/auth-libs";
-
-// import prisma from "@/libs/prisma";
+import prisma from "@/libs/prisma";
 
 const Page = async () => {
     const user = await authUserSession();
-    // const collection = await prisma.collection.findMany({
-        // where: { user_email: user.email },
-    // });
-
+    const collection = await prisma.collection.findMany({
+        where: { user_email: user.email },
+    });
+    console.log(collection)
     return (
         <section className="mt-4 px-6 w-full">
             <Header title={"My Collection"} />
             
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                {/* {collection.map((collect, index) => { */}
-                    {/* return ( */}
-                        <Link  href={`/`} className="relative">
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6">
+                {collection.map((collect, index) => {
+                    return (
+                        <Link key={index} href={`/detail/${collect.anime_mal_id}`} className="relative w-[250]">
                             <Image
-                                src=''
-                                alt=''
-                                width={350}
-                                height={350}
-                                className="w-full"
+                                src={collect.anime_image}
+                                alt='anime'
+                                width={250}
+                                height={250}
+                                className=""
                             />
                             <div className="absolute flex items-center justify-center bottom-0 w-full bg-lime-700 h-16">
-                                <h5 className="text-xl text-center">Judul Anime</h5>
+                                <h5 className="text-xl text-center">{collect.anime_title}</h5>
                             </div>
                         </Link>
-                        <Link  href={`/`} className="relative">
-                            <Image
-                                src=''
-                                alt=''
-                                width={350}
-                                height={350}
-                                className="w-full"
-                            />
-                            <div className="absolute flex items-center justify-center bottom-0 w-full bg-lime-700 h-16">
-                                <h5 className="text-xl text-center">Judul Anime</h5>
-                            </div>
-                        </Link>
-                        <Link  href={`/`} className="relative">
-                            <Image
-                                src=''
-                                alt=''
-                                width={350}
-                                height={350}
-                                className="w-full"
-                            />
-                            <div className="absolute flex items-center justify-center bottom-0 w-full bg-lime-700 h-16">
-                                <h5 className="text-xl text-center">Judul Anime</h5>
-                            </div>
-                        </Link>
-                        <Link  href={`/`} className="relative">
-                            <Image
-                                src=''
-                                alt=''
-                                width={350}
-                                height={350}
-                                className="w-full"
-                            />
-                            <div className="absolute flex items-center justify-center bottom-0 w-full bg-lime-700 h-16">
-                                <h5 className="text-xl text-center">Judul Anime</h5>
-                            </div>
-                        </Link>
-                    {/* ); */}
-                {/* })} */}
+                        
+                     );
+                 })} 
             </div>
         </section>
     );

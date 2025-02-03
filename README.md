@@ -159,3 +159,53 @@ Secara teknis, ketika router.back() dipanggil, perpustakaan routing akan melakuk
 2. Mengambil URL halaman sebelumnya dari riwayat navigasi.
 3. Mengarahkan pengguna ke URL tersebut menggunakan metode `pushState` atau `replaceState` dari API History browser.
 4. Dengan demikian, pengguna akan kembali ke halaman sebelumnya tanpa memuat ulang seluruh aplikasi. Fungsi ini sangat berguna untuk membuat tombol "Kembali" yang fungsional dalam aplikasi web.
+
+
+### Sesi 10 - Database
+**Langkah 1: Menginstal Prisma**
+
+* Jalankan perintah `npm install @prisma/client` di terminal untuk menginstal Prisma.
+* Pastikan Prisma terinstal dengan benar sebelum melanjutkan ke langkah berikutnya.
+
+**Langkah 2: Membuat File Konfigurasi Prisma**
+
+* File konfigurasi Prisma ini akan digunakan untuk mendefinisikan model data dan mengatur koneksi database.
+
+**Langkah 3: Mendefinisikan Model Data**
+
+* Di dalam file konfigurasi Prisma, definisikan model data yang akan digunakan oleh aplikasi.
+* Model data adalah struktur data yang terdiri dari atribut dan relasi.
+
+**Langkah 4: Mengatur Koneksi Database**
+
+* Di dalam file konfigurasi Prisma, atur koneksi database dengan menambahkan konfigurasi koneksi database.
+* Pastikan koneksi database diatur dengan benar sebelum melanjutkan ke langkah berikutnya.
+
+**Langkah 5: Menggunakan Prisma Client**
+
+* Setelah koneksi database diatur, gunakan Prisma Client untuk menghubungkan aplikasi dengan database.
+* Prisma Client adalah library yang digunakan untuk mengakses database melalui Prisma.
+
+**Langkah 6: Menggunakan Prisma di Aplikasi**
+
+* Terakhir, gunakan Prisma di aplikasi untuk mengakses data dari database.
+* Gunakan metode yang disediakan oleh Prisma Client, seperti `findMany`, `findFirst`, `create`, `update`, dan `delete`.
+
+**prisma.js**
+ kode yang digunakan untuk mengatur koneksi database di `src/libs/prisma.js`:
+```javascript
+import { PrismaClient } from "@prisma/client";
+
+let prisma;
+
+if (process.env.NODE_ENV === "production") {
+    prisma = new PrismaClient();
+} else {
+    if (!global.prisma) {
+        global.prisma = new PrismaClient();
+    }
+    prisma = global.prisma;
+}
+
+export default prisma;
+```
