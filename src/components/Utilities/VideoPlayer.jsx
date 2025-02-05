@@ -28,7 +28,7 @@ const VideoPlayer = ({ youtubeId }) => {
 
   const Player = () => {
     return (
-      <div className="fixed bottom-0 right-0">
+      <div className="sm:fixed bottom-0 right-0">
         <button onClick={handleVideoPlayer}>
           <XSquare size={32} />
         </button>
@@ -40,7 +40,7 @@ const VideoPlayer = ({ youtubeId }) => {
       </div>
     );
   };
-  return isOpen ? <Player /> : <button onClick={handleVideoPlayer} className="fixed bottom-5 right-5 w-32 bg-slate-300"> Tonton Trailer</button>;
+  return isOpen ? <Player /> : <button onClick={handleVideoPlayer} className="fixed bottom-5 right-5 w-32 bg-orange text-white py-2 rounded"> Tonton Trailer</button>;
 };
 
 export default VideoPlayer;

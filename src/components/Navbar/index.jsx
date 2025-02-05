@@ -16,10 +16,10 @@ import UserActionButton from "./UserActionButton";
 /******  06a2fe60-85f2-4d64-9404-ee748cde68ee  *******/
 const Navbar = () => {
   return (
-    <header className="bg-lime-500">
+    <header className="bg-green-800">
       <div className="flex justify-between p-4 md:flex-row flex-col gap-2 md:items-center">
-        <Link className="font-bold text-2xl" href="/">
-          SIAnimeList
+        <Link className="font-bold text-4xl text-white" href="/">
+          SIA<small className="font-extralight">nimeList</small>
         </Link>
           
           <InputSearch/>

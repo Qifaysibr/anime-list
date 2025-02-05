@@ -18,7 +18,7 @@ const Header = ({title}) => {
         router.back()
     }
     return (
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between items-center m-4">
             <button onClick={handleBack} className="text-white"><Backspace size={32} /></button>
             <h3 className="text-2xl font-bold text-orange mb-4">{title}</h3>
             </div>

@@ -25,7 +25,7 @@ const Page = async () => {
                                 height={250}
                                 className=""
                             />
-                            <div className="absolute flex items-center justify-center bottom-0 w-full bg-lime-700 h-16">
+                            <div className="absolute flex items-center justify-center bottom-0 w-full bg-green-700 h-16">
                                 <h5 className="text-xl text-center">{collect.anime_title}</h5>
                             </div>
                         </Link>
