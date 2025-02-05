@@ -209,3 +209,12 @@ if (process.env.NODE_ENV === "production") {
 
 export default prisma;
 ```
+### Sesi 11 - Comment
+
+1. Membuat fitur komentar
+   - Pada halaman detail anime, komentar dapat terlihat oleh siapa saja walaupun user tidak login
+   >>Proses pengambilan comment dari database menggunakan Prisma Client dengan menggunakan metode `findMany` dan mengirimkan query berupa `WHERE` dengan kondisi `animeId` sama dengan `id` anime yang sedang dibuka.
+   - User yang telah login dapat menambahkan komentar pada halaman detail anime
+   - Pada halaman ./dashboard/comment, user dapat melihat semua komentar yang telah ditambahkan oleh user tersebut
+   >>Proses pengambilan comment dari database menggunakan Prisma Client dengan menggunakan metode `findMany` dan mengirimkan query berupa `WHERE` dengan kondisi `userId` sama dengan `id` user yang sedang login.
+   

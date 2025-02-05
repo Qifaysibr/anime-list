@@ -4,6 +4,8 @@ import VideoPlayer from "@/components/Utilities/VideoPlayer";
 import CollectionButton from "@/components/AnimeList/CollectionButton";
 import { authUserSession } from "@/libs/auth-libs";
 import prisma from "@/libs/prisma";
+import CommentInput from "@/components/AnimeList/CommentInput";
+import CommentBox from "@/components/AnimeList/CommentBox";
 /**
  * Halaman detail anime.
  *
@@ -22,14 +24,14 @@ const Page = async ({ params }) => {
   const { id } = await params;
   const anime = await getAnimeResponse(`anime/${id}`);
   const user = await authUserSession();
-  const collection = await prisma.collection.findFirst({
+  const collection = await prisma.collection?.findFirst({
     where: {
       user_email: user?.email,
       anime_mal_id: id,
     },
   });
 
-  const youtubeId = anime.data.trailer.youtube_id;
+  const youtubeId = anime.data?.trailer.youtube_id;
   return (
     <>
       <div className="pt-4 px-4">
@@ -84,6 +86,13 @@ const Page = async ({ params }) => {
           alt="anime"
         ></Image>
         <p>{anime.data.synopsis}</p>
+      </div>
+      <div className="pt-4 px-4">
+          <h3 className="text-xl font-bold text-orange mb-2">Komentar</h3>
+          <CommentBox anime_mal_id={id}/>
+          {user &&
+          <CommentInput anime_mal_id={id} user_email={user?.email} username={user?.name} anime_title={anime.data.title}/>
+      }
       </div>
       <div>
         {youtubeId ? (
