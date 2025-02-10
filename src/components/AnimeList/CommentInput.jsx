@@ -1,12 +1,10 @@
 'use client'
 import {useState} from 'react'
-// import {Alert, Button} from "@material-tailwind/react";
 import {useRouter} from "next/navigation";
+import toast from 'react-hot-toast';
 
 const CommentInput = ({anime_mal_id, user_email, username, anime_title}) => {
     const [comment, setComment] = useState('')
-    const [isAdded, setIsAdded] = useState(false);
-    const [open, setOpen] = useState(true);
 
     const router = useRouter();
     const handleInput = (event) => {
@@ -22,9 +20,30 @@ const CommentInput = ({anime_mal_id, user_email, username, anime_title}) => {
             method: "POST",
             body: JSON.stringify(data),
         });
+
+
+        //Ketika ingin menggunakan Toast dari react-hot-toast harus menambahkan component <Toaster/> di layout.jsx
+        if (response.ok) {
+        toast.success('Komentar berhasil ditambahkan.', {
+            style: {
+              border: '1px dashed #713200',
+              padding: '16px',
+              color: '#713200',
+            },
+            iconTheme: {
+              primary: '#713200',
+              secondary: '#FFFAEE',
+            },
+          });
+          } else {
+            toast.error('Gagal menambahkan komentar', {
+              duration: 5000,
+              position: 'top-right',
+            });
+          }
+
         const postComment = await response?.json();
-        if (postComment.isAdded) {
-            setIsAdded(true);
+        if (postComment) {
             setComment('')
             router.refresh()
         }
@@ -33,26 +52,6 @@ const CommentInput = ({anime_mal_id, user_email, username, anime_title}) => {
 
     return (
         <div className='flex flex-col md:flex-row gap-2 pt-10 md:py-20'>
-            {isAdded && (
-                <div className="absolute top-0 right-0 mt-20">
-                    {open && (
-                        <div
-                            className="flex items-center border-l-4 border-[#2ec946] bg-[#2ec946]/60 font-medium text-white px-4 py-2 rounded-b-md">
-                            <span>Komentar berhasil ditambahkan</span>
-                            <button
-                                className="ml-8 text-white"
-                                onClick={() => setOpen(false)}
-                            >
-                                X
-                            </button>
-                        </div>
-                    )}
-                    {isAdded && setTimeout(() => {
-                        setOpen(false);
-                        setIsAdded(false)
-                    }, 5000)}`
-                </div>
-            )}
             <textarea
                 value={comment}
                 onChange={handleInput}
